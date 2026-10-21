@@ -1,0 +1,17 @@
+{
+  "name": "Next.js + shadcn Starter",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "node",
+  "postCreateCommand": "pnpm install --frozen-lockfile",
+  "waitFor": "postCreateCommand",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Project Starter",
+      "onAutoForward": "openBrowser"
+    }
+  }
+}

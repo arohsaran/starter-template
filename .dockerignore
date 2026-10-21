@@ -1,0 +1,9 @@
+node_modules
+.pnpm-store
+.next
+.git
+pb_data
+*.zip
+*.tsbuildinfo
+.env*
+!.env.example
