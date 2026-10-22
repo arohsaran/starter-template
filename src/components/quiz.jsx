@@ -46,6 +46,7 @@ export function Quiz({ quiz }) {
        setAnswers(values);
        const answersArr = Object.values(answers)
        
+       console.log(values);
        for(let i = 0; i < answersArr.length; i++) {
             if (answersArr[i] == quiz[i].choices[quiz[i].answer].id) {
                 correctAnswers += 1;
