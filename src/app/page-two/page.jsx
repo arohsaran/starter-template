@@ -41,31 +41,31 @@ export default function PageTwo() {
     function tagsQuestionMark(item, tagsList) {
       let tagIncluded = false
       for (let tag in tagsList) {
-\        console.log([tag,item[tag],tagsList[tag]])
-        if(item[tag] === true && tagsList[tag] === true) {
-          tagIncluded=true
+        console.log([tag, item[tag], tagsList[tag]])
+        if (item[tag] === true && tagsList[tag] === true) {
+          tagIncluded = true
         }
       }
-      return(tagIncluded)
+      return (tagIncluded)
     }
-    if (!(data.isLoading || data.error)){
+    if (!(data.isLoading || data.error)) {
       //console.log(data.data)
       content.push(data.data)
       for (let obj of content) {
         console.log(obj.tags)
-        if (tagsQuestionMark(obj.tags, tags)){
+        if (tagsQuestionMark(obj.tags, tags)) {
           // hdfahdfbghasdfbaldbfalkjsbskldjfbakjsdfakjsdf
           contentFiltered.push(obj)
         }
       }
-      return(contentFiltered)
+      return (contentFiltered)
     }
   }
 
   const content = []
   const contentFiltered = []
   const data = useList("gallery", { sort: "-created" })
-  
+
 
   return (
     <section className="space-y-3">
@@ -94,7 +94,7 @@ export default function PageTwo() {
             <p className="grid grid-center"> {data.isLoading ? "Loading..." : ""} {data.error ? "Error finding images" : ""} {(!(data.isLoading || data.error)) ? "Loaded" : ""} </p>
             <Gallery arr={getImageArray()}>{getImageArray()}</Gallery>
           </div>
-        </div> 
+        </div>
       </div>
     </section>
   );
