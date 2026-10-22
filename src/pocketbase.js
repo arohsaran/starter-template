@@ -4,7 +4,7 @@ import PocketBase, { LocalAuthStore } from "pocketbase";
 // Find your PocketBase link in the LMS and replace the placeholder below.
 // Optional: NEXT_PUBLIC_POCKETBASE_URL overrides this value.
 export const dbUrl = (
-  process.env.NEXT_PUBLIC_POCKETBASE_URL || "https://????.pockethost.io"
+  process.env.NEXT_PUBLIC_POCKETBASE_URL || "https://oct2026-team6-wombat.pockethost.io/"
 ).replace(/\/+$/, "");
 // Keep the auth forms disabled until the placeholder is replaced.
 export const isPocketBaseConfigured = !dbUrl.includes("?");
