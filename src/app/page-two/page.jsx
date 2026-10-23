@@ -17,6 +17,8 @@ import {
   FieldTitle,
 } from "@/components/ui/field";
 import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+
 import { useState } from "react";
 
 import { useList } from "@/hooks/database";
@@ -112,6 +114,9 @@ export default function PageTwo() {
             <p className="grid grid-center text-sm text-muted-foreground"> {data.isLoading ? "Loading..." : ""} {data.error ? "Error finding images" : ""} {(!(data.isLoading || data.error)) ? "Loaded" : ""} </p>
             <Gallery arr={getImageArray()}>{getImageArray()}</Gallery>
           </div>
+        </div>
+        <div>
+          <Button>Upload Your Own!</Button>
         </div>
       </div>
     </section>

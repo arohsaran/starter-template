@@ -12,8 +12,14 @@ export default function PageOne() {
       {
         question: "What is a banana?",
         id: "banana",
-        choices: [{id:"fruit", label:"Fruit"}, {id:"object", label:"Object"}, {id:"iam", label:"I am a banana"}],
+        choices: [{id:"froot", label:"Fruit"}, {id:"object", label:"Object"}, {id:"im", label:"I am a banana"}],
         answer: 2
+      },
+      {
+        question: "How should you align a pyramid?",
+        id: "actual3Dprint",
+        choices: [{id:"1", label:"Point touching the ground"}, {id:"2", label:"Square base touching the floor"}, {id:"3", label:"Point inside the ground"}],
+        answer: 1
       }
     ]
   

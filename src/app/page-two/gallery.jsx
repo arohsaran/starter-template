@@ -41,13 +41,13 @@ export function Gallery({ arr }) {
                 </CardContent>
                 <CardFooter>
                     <p>{obj.model}</p>
-                    <p>This was uploaded on {obj.created}</p>
+                    <p>Uploaded on {obj.created}!</p>
                 </CardFooter>
             </Card>
         </div>)
     }
     return (
-        <div>
+        <div className="p-10">
             {whatItsFor}
         </div>
     )
