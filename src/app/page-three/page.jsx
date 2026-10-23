@@ -7,13 +7,13 @@ export default function PageOne() {
         question: "What is an apple?",
         id: "apple",
         choices: [{id:"fruit", label:"Fruit"}, {id:"brand", label:"Brand"}, {id:"iam", label:"I am an apple"}],
-        answer: 0
+        answer: 2
       },
       {
         question: "What is a banana?",
         id: "banana",
         choices: [{id:"fruit", label:"Fruit"}, {id:"object", label:"Object"}, {id:"iam", label:"I am a banana"}],
-        answer: 0
+        answer: 2
       }
     ]
   

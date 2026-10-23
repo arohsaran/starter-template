@@ -15,7 +15,16 @@ export function Gallery({ arr }) {
     console.log(arr)
 
     function tagsToList(tagList){
-        return(JSON.stringify(tagList))
+        let r = ""
+        for (let tag in tagList) {
+            console.log(tag)
+            if(tagList[tag]){
+                console.log(tag)
+                r += tag + ", "
+            }
+        }
+        //return(JSON.stringify(tagList))
+        return(r)
     }
 
     const whatItsFor = []
@@ -24,7 +33,7 @@ export function Gallery({ arr }) {
             <Card>
                 <CardHeader>
                     <CardTitle>{obj.description}</CardTitle>
-                    <CardDescription>{tagsToList(obj.tags)}</CardDescription>
+                    <CardDescription>Tags: {tagsToList(obj.tags)}.</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <p>{/*obj.image*/}</p>

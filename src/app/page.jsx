@@ -27,7 +27,7 @@ export default function PageOne() {
           View Gallery
         </a>
         <a
-          href="/page-two"
+          href="/page-three"
           className="inline-block rounded-md bg-primary px-6 py-3 font-bold text-primary-foreground transition-colors hover:bg-primary/90"
         >
           Take the Quiz
