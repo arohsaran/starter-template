@@ -8,11 +8,9 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const pages = [
-  { title: "Page One", href: "/" },
-  { title: "Page Two", href: "/page-two" },
-  { title: "Page Three", href: "/page-three" },
-  { title: "Page Four", href: "/page-four" },
-  { title: "Page Five", href: "/page-five" },
+  { title: "Home", href: "/" },
+  { title: "Gallery", href: "/page-two" },
+  { title: "Quiz", href: "/page-three" },
 ];
 
 // The navbar and Page Five read the same PocketBase login through useAuth.
@@ -34,7 +32,7 @@ export function Navbar() {
           className="flex shrink-0 items-center gap-2 text-sm font-semibold tracking-tight"
         >
           <Shapes className="size-5" aria-hidden="true" />
-          Project Starter
+          3D Printing Guide
         </Link>
         {/* On a small screen the links wrap so every page stays visible. */}
         <nav
@@ -63,7 +61,7 @@ export function Navbar() {
         </nav>
         <div className="ml-auto flex items-center gap-2">
           <ThemeToggle />
-          {!isReady ? (
+          {/* {!isReady ? (
             <span role="status" className="text-xs text-muted-foreground">
               Loading account…
             </span>
@@ -88,7 +86,7 @@ export function Navbar() {
                 Sign up
               </Link>
             </>
-          )}
+          )} */}
         </div>
       </div>
     </header>
