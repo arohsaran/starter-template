@@ -1,5 +1,5 @@
 "use client";
-import { Quiz } from "../components/quiz"
+import { Quiz } from "../../components/quiz"
 // This is the home page. Add your own components inside the section.
 export default function PageOne() {
   const beginnerQuiz = [
