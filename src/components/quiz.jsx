@@ -43,15 +43,14 @@ export function Quiz({ quiz }) {
         const submittedAnswers = formData.map()*/
         let correctAnswers = 0;
         let incorrectAnswers = [];
-       setAnswers(values);
-       const answersArr = Object.values(answers)
+       const answersArr = Object.values(values)
        
        console.log(values);
        for(let i = 0; i < answersArr.length; i++) {
             if (answersArr[i] == quiz[i].choices[quiz[i].answer].id) {
                 correctAnswers += 1;
             } else {
-                incorrectAnswers.append([answers[i], quiz[i].choices[quiz[i].answer-1].id]);
+                incorrectAnswers.push([answers[i], quiz[i].choices[quiz[i].answer-1]?.id]);
             }
         }
 
@@ -69,12 +68,26 @@ export function Quiz({ quiz }) {
 
     function multipleChoiceQuestion(questions) {
         return (
-            <div key={questions.id}>
-                <RadioGroup name={questions.id}>
-                    <FieldLegend className="font-semibold">{questions.question}</FieldLegend>
-                    {questions.choices.map(multipleChoice)}
-                </RadioGroup>
-            </div>
+            <Controller
+                name={questions.id}
+                control={form.control}
+                defaultValue=""
+                key={questions.id}
+                render={({ field }) => (
+                    <div>
+                        <RadioGroup
+                            name={field.name}
+                            value={field.value}
+                            onValueChange={field.onChange}
+                        >
+                            <FieldLegend className="font-semibold">
+                                {questions.question}
+                            </FieldLegend>
+                            {questions.choices.map(multipleChoice)}
+                        </RadioGroup>
+                    </div>
+                )}
+            />
         );
     }
     
