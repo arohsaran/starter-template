@@ -11,6 +11,7 @@ const pages = [
   { title: "Home", href: "/" },
   { title: "Gallery", href: "/page-two" },
   { title: "Quiz", href: "/page-three" },
+  { title: "FAQ", href: "/page-four" },
 ];
 
 // The navbar and Page Five read the same PocketBase login through useAuth.
