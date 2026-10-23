@@ -7,6 +7,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
+import { pb } from "@/pocketbase"
 
 export function Gallery({ arr }) {
     // arr is already filtered by tags
@@ -26,8 +27,8 @@ export function Gallery({ arr }) {
                     <CardDescription>{tagsToList(obj.tags)}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <p>{obj.image}</p>
-                    <img src={obj.image}></img>
+                    <p>{/*obj.image*/}</p>
+                    <img src={pb.files.getURL(obj, obj.image)} width="100"/>
                 </CardContent>
                 <CardFooter>
                     <p>{obj.model}</p>
