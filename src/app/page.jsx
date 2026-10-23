@@ -21,10 +21,16 @@ export default function PageOne() {
         </p>
 
         <a
-          href="#calculators"
+          href="/page-two"
+          className="inline-block mr-2 rounded-md bg-primary px-6 py-3 font-bold text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          View Gallery
+        </a>
+        <a
+          href="/page-two"
           className="inline-block rounded-md bg-primary px-6 py-3 font-bold text-primary-foreground transition-colors hover:bg-primary/90"
         >
-          Get Started
+          Take the Quiz
         </a>
       </section>
 
@@ -40,7 +46,7 @@ export default function PageOne() {
         <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[30px]">
           <div className="rounded-lg border border-border bg-card p-[30px] text-card-foreground">
             <h3 className="mb-4 text-xl font-semibold text-primary">
-              ⏱️ Print Estimator
+               Print Estimator
             </h3>
             <p className="text-muted-foreground">
               Estimate print times and material weights based on object
@@ -50,7 +56,7 @@ export default function PageOne() {
 
           <div className="rounded-lg border border-border bg-card p-[30px] text-card-foreground">
             <h3 className="mb-4 text-xl font-semibold text-primary">
-              🎨 Filament Preview
+             Filament Preview
             </h3>
             <p className="text-muted-foreground">
               Preview different PLA, PETG, and ABS material colors before
@@ -60,7 +66,7 @@ export default function PageOne() {
 
           <div className="rounded-lg border border-border bg-card p-[30px] text-card-foreground">
             <h3 className="mb-4 text-xl font-semibold text-primary">
-              📐 Design Guidelines
+              Design Guidelines
             </h3>
             <p className="text-muted-foreground">
               Review critical checklists for overhangs, wall thickness,
