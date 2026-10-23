@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
           {/* Footer */}
           <footer className="border-t border-border bg-muted px-[30px] py-[30px] text-center text-sm text-muted-foreground">
             <p>
-              &copy; 2026 9th Grade DRG 3D Printing Lab. All rights reserved.
+              &copy; 3D Printing Guide. All rights reserved.
             </p>
           </footer>
         </Providers>

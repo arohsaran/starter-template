@@ -126,14 +126,14 @@ export default function PageFour() {
       />
 
       <section className="space-y-3">
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+        <h1 className="text-3xl text-center font-semibold tracking-tight sm:text-4xl">
           3D Printing FAQ & Guide
         </h1>
-        <p className="text-muted-foreground">
+        <p className="text-center text-muted-foreground">
           Find answers to common questions about 3D printing, troubleshooting, and material choices.
         </p>
 
-        <Accordion defaultValue={["downloading"]} className="max-w-lg">
+        <Accordion defaultValue={["downloading"]} >
           <AccordionItem value="downloading">
             <AccordionTrigger>Where do I find things to 3D print?</AccordionTrigger>
             <AccordionContent>
@@ -207,21 +207,14 @@ export default function PageFour() {
         </Accordion>
       </section>
 
-      <section className="mt-8 max-w-2xl space-y-4 rounded-2xl border bg-card p-4 shadow-sm">
+      <section className="flex flex-col mt-8 space-y-4 rounded-2xl border bg-card p-4 shadow-sm min-h-100">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              AI assistant
-            </p>
             <h2 className="text-xl font-semibold">3D Print Helper</h2>
           </div>
-          <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-medium text-emerald-700 dark:text-emerald-300">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" />
-            Online
-          </span>
         </div>
 
-        <div className="space-y-3 rounded-xl border bg-background p-3">
+        <div className="space-y-3 p-3 grow">
           {messages.map((message) => (
             <div
               key={message.id}
@@ -240,33 +233,36 @@ export default function PageFour() {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-2">
-          {chatSuggestions.map((suggestion) => (
+        <div className="my-auto">
+          <div className="flex flex-wrap gap-2">
+            {chatSuggestions.map((suggestion) => (
+              <button
+                key={suggestion}
+                type="button"
+                onClick={() => setInput(suggestion)}
+                className="rounded-full border bg-background px-3 py-1.5 text-xs text-muted-foreground transition hover:bg-accent hover:text-foreground"
+              >
+                {suggestion}
+              </button>
+            ))}
+          </div>
+
+          <form onSubmit={handleSubmit} className="mt-5 flex gap-2">
+            <input
+              value={input}
+              onChange={(event) => setInput(event.target.value)}
+              placeholder="Ask about prints, filaments, or troubleshooting..."
+              className="flex-1 rounded-xl border bg-background px-3 py-2 text-sm outline-none ring-0 focus:border-primary"
+            />
             <button
-              key={suggestion}
-              type="button"
-              onClick={() => setInput(suggestion)}
-              className="rounded-full border bg-background px-3 py-1.5 text-xs text-muted-foreground transition hover:bg-accent hover:text-foreground"
+              type="submit"
+              className="rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90"
             >
-              {suggestion}
+              Ask
             </button>
-          ))}
+          </form>
         </div>
 
-        <form onSubmit={handleSubmit} className="flex gap-2">
-          <input
-            value={input}
-            onChange={(event) => setInput(event.target.value)}
-            placeholder="Ask about prints, filaments, or troubleshooting..."
-            className="flex-1 rounded-xl border bg-background px-3 py-2 text-sm outline-none ring-0 focus:border-primary"
-          />
-          <button
-            type="submit"
-            className="rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90"
-          >
-            Ask
-          </button>
-        </form>
       </section>
     </div>
   );
