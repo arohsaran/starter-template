@@ -31,17 +31,18 @@ export default function PageTwo() {
   const [checkExp, setExp] = useState(true)
 
   const tags = {}
-  {
-    tags.beginner = checkBegin
-    tags.intermediate = checkInter
-    tags.expert = checkExp
-  }
+  tags.beginner = checkBegin
+  tags.intermediate = checkInter
+  tags.expert = checkExp
 
   function getImageArray() {
+
+    /*
     function tagsQuestionMark(item, tagsList) {
+      
       let tagIncluded = false
       for (let tag in tagsList) {
-        console.log([tag, item[tag], tagsList[tag]])
+        //console.log([tag, item[tag], tagsList[tag]])
         if (item[tag] === true && tagsList[tag] === true) {
           tagIncluded = true
         }
@@ -49,17 +50,34 @@ export default function PageTwo() {
       return (tagIncluded)
     }
     if (!(data.isLoading || data.error)) {
-      //console.log(data.data)
+      console.log(data.data)
       content.push(data.data)
-      for (let obj of content) {
-        console.log(obj.tags)
+      console.log(content[0].length)
+      for (let obj of content[0]) {
+        console.log("for every object in content")
+        //console.log(obj)
         if (tagsQuestionMark(obj.tags, tags)) {
           // hdfahdfbghasdfbaldbfalkjsbskldjfbakjsdfakjsdf
-          contentFiltered.push(obj)
+          console.log("content filtered added!")
+          console.log(obj)
+          console.log(contentFiltered[0])
+          contentFiltered[0].push(obj)
+          console.log(contentFiltered[0])
         }
       }
-      return (contentFiltered)
+      console.log("new content")
+      console.log(contentFiltered[0])
+      return (contentFiltered[0])
     }
+    return ({})
+    */
+
+    if (!(data.isLoading || data.error)) {
+      //console.log(data.data)
+      content.push(data.data)
+      return(content[0])
+    }
+    return([])
   }
 
   const content = []
@@ -88,10 +106,10 @@ export default function PageTwo() {
             </Field>
           </FieldLabel>
         </div>
-        <div id="imageList" className="">
+        <div id="imageList" className="m-10">
           <h3 className="text-xl text-semibold">Images:</h3>
           <div id="images" className="grid grid-center">
-            <p className="grid grid-center"> {data.isLoading ? "Loading..." : ""} {data.error ? "Error finding images" : ""} {(!(data.isLoading || data.error)) ? "Loaded" : ""} </p>
+            <p className="grid grid-center text-sm text-muted-foreground"> {data.isLoading ? "Loading..." : ""} {data.error ? "Error finding images" : ""} {(!(data.isLoading || data.error)) ? "Loaded" : ""} </p>
             <Gallery arr={getImageArray()}>{getImageArray()}</Gallery>
           </div>
         </div>

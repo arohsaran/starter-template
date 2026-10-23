@@ -4,8 +4,8 @@ import "./globals.css";
 
 // The layout stays a Server Component so Next.js can read this metadata.
 export const metadata = {
-  title: "Project Starter",
-  description: "A simple Next.js, shadcn, and PocketBase project.",
+  title: "DRG 3D Printing",
+  description: "3D Printing is Awesome!!",
 };
 
 export default function RootLayout({ children }) {
